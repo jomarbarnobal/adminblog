@@ -1,0 +1,10 @@
+<p>admin post show</p>
+
+Title <%= @post.title %>
+<br>
+content: <%= @post.content %>
+<br>
+publish: <%=  status_converter(@post.publish) %>
+<br>
+<%= time_ago(@post.created_at)%>
+

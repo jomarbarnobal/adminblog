@@ -1,0 +1,26 @@
+
+<%= form_for [:admin, @setting] do |f|%>
+	<p>
+		<%= f.label :site_name %>
+		<%= f.text_field :site_name %>
+	</p>
+
+	<p>
+		<%= f.label :post_per_page %>
+		<%= f.number_field :post_per_page %>
+	</p>
+	<p>
+		<%= f.label :under_maintenance %>
+		<%= f.check_box :under_maintenance %>
+	</p>
+	<p>
+		<%= f.label :prevent_commenting %>
+		<%= f.select :prevent_commenting, [['disable', false], ['active', true]] %>
+	</p>
+	<p>
+		<%= f.label :tag_visibility %>
+		<%= f.select :tag_visibility, [['disable', false], ['active', true]] %>
+	</p>
+
+	<%= f.submit %>
+<% end %>

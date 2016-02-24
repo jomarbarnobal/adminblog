@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Myblog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= link_to 'logout test', logout_path %>
+<% if flash[:notice] %>
+	<%= notice %>
+<% elsif flash[:alert]%>
+	<%= alert %>
+<% end %>
+
+<p>
+	<%= link_to 'Post', admin_posts_path %>
+	<%= link_to 'Moderators', admin_moderators_path %>
+	<%= link_to 'Tags', new_admin_tag_path %>
+	<%= link_to 'Comments', admin_comments_path %>
+	<%= link_to 'Visitors', admin_visitors_path %>
+	<%= link_to 'Messages', admin_messages_path %>
+	<%= link_to 'Notifications', admin_notifications_path %>
+	<%= link_to 'dashboard', admin_dashboard_index_path %>
+	<%= link_to 'Settings', new_admin_setting_path %>
+</p>
+
+<%= yield %>
+
+</body>
+</html>

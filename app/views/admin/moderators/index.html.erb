@@ -1,0 +1,13 @@
+<% @moderators.each do |m| %>
+	<p>
+	<%= m.fullname %>
+	</p>
+	<p>
+	<%= m.username %>	
+	</p>
+	<p>
+	<%= time_ago_in_words(m.created_at)%> ago	
+	</p>
+
+	<%= link_to 'edit', edit_admin_moderator_path(m) %> |
+<% end %>

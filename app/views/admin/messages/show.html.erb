@@ -1,0 +1,7 @@
+<h1>Admin::Messages#show</h1>
+
+
+
+<p>From: <%= @message.visitor.fullname %></p>
+<p>Created at: <%= time_ago(@message.created_at) %></p>
+<p>Content: <%= @message.content %></p>

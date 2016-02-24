@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Myblog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if flash[:notice] %>
+	<%= notice %>
+<% elsif flash[:alert]%>
+	<%= alert %>
+<% end %>
+
+<p>
+	<%= link_to Setting.site_name, posts_path %>
+	<%= link_to 'Post', posts_path %>
+	<%= link_to 'About', '#' %>
+	<%= link_to 'Contact', new_message_path %>
+	<%= link_to 'Login', login_path %>
+</p>
+<%= yield %>
+
+</body>
+</html>
